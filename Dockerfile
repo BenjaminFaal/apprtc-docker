@@ -1,8 +1,9 @@
 FROM ubuntu
 MAINTAINER Benjamin Faal
 
-RUN apt-get install wget -y
+RUN apt-get update
 
+RUN apt-get install wget -y
 
 # Google App Engine
 RUN wget -O /appengine.zip https://storage.googleapis.com/appengine-sdks/featured/google_appengine_1.9.38.zip
