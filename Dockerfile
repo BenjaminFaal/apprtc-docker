@@ -43,4 +43,4 @@ EXPOSE 8080
 
 WORKDIR /
 
-RUN ../app_engine/dev_appserver.py ./out/app_engine
+RUN /app_engine/dev_appserver.py ./out/app_engine
