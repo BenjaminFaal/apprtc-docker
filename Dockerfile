@@ -21,7 +21,7 @@ RUN sh ./nodejs.sh
 RUN apt-get install -y nodejs
 
 # symlink nodejs to node
-RUN ln -s /usr/local/bin/nodejs /usr/bin/node
+RUN ln -s /usr/bin/nodejs /usr/bin/node
 
 RUN apt-get install -y build-essential
 
