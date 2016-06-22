@@ -13,10 +13,6 @@ RUN wget -O /appengine.zip https://storage.googleapis.com/appengine-sdks/feature
 RUN apt-get install -y unzip
 RUN unzip /appengine.zip -d /appengine
 
-RUN echo DIRECTORY CONTENTS:
-
-RUN ls
-
 RUN apt-get install python2.7 python-pil -y
 RUN apt-get install python-webtest -y
 
