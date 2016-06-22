@@ -19,7 +19,10 @@ RUN chmod +x nodejs.sh
 RUN sh ./nodejs.sh
 
 RUN apt-get install -y nodejs
-RUN apt-get install -y nodejs-legacy
+
+# symlink nodejs to node
+RUN ln -s /usr/local/bin/nodejs /usr/bin/node
+
 RUN apt-get install -y build-essential
 
 # GIT
