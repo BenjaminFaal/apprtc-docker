@@ -1,8 +1,6 @@
 FROM ubuntu
 MAINTAINER Benjamin Faal
 
-ENV HOSTNAME VUL_HOSTNAME_IN
-
 RUN apt-get update -y
 
 RUN apt-get install -y wget
@@ -51,4 +49,4 @@ RUN grunt build
 
 EXPOSE 8080
 
-CMD if [ $HOSTNAME = VUL_HOSTNAME_IN ]; then dev_appserver.py ./out/app_engine --skip_sdk_update_check; else dev_appserver.py ./out/app_engine --skip_sdk_update_check --host=$HOSTNAME; fi
+CMD dev_appserver.py ./out/app_engine --skip_sdk_update_check --host=0.0.0.0
