@@ -41,4 +41,6 @@ RUN grunt build
 
 EXPOSE 8080
 
+WORKDIR /
+
 RUN ../app_engine/dev_appserver.py ./out/app_engine
