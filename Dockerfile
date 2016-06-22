@@ -51,4 +51,4 @@ RUN grunt build
 
 EXPOSE 8080
 
-RUN if [ $HOSTNAME = VUL_HOSTNAME_IN ]; then dev_appserver.py ./out/app_engine --skip_sdk_update_check; else dev_appserver.py ./out/app_engine --skip_sdk_update_check --host=$HOSTNAME; fi
+CMD if [ $HOSTNAME = VUL_HOSTNAME_IN ]; then dev_appserver.py ./out/app_engine --skip_sdk_update_check; else dev_appserver.py ./out/app_engine --skip_sdk_update_check --host=$HOSTNAME; fi
