@@ -45,4 +45,4 @@ RUN grunt build
 
 EXPOSE 8080
 
-RUN /app_engine/dev_appserver.py ./out/app_engine --host=$HOSTNAME
+RUN dev_appserver.py ./out/app_engine --host=$HOSTNAME
