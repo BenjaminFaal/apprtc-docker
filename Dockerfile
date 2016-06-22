@@ -14,9 +14,14 @@ RUN unzip /appengine.zip -d /appengine
 RUN apt-get install python2.7 python-pil -y
 
 # NodeJS
-RUN curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+RUN curl -o nodejs.sh https://deb.nodesource.com/setup_4.x
+RUN chmod +x nodejs.sh
+
+RUN sh ./nodejs.sh
+
 RUN apt-get install -y nodejs
 RUN apt-get install -y nodejs-legacy
+RUN apt-get install -y build-essential
 
 # GIT
 RUN apt-get install -y git
