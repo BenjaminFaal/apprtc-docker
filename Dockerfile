@@ -37,7 +37,7 @@ RUN apt-get install -y build-essential
 # GIT
 RUN apt-get install -y git
 
-RUN git clone https://github.com/webrtc/apprtc
+RUN git clone https://github.com/BenjaminFaal/apprtc
 
 WORKDIR apprtc
 
