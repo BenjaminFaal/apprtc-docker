@@ -49,4 +49,8 @@ RUN grunt build
 
 EXPOSE 8080
 
+ENV SHARED_KEY FILL_KEY_IN
+ENV TURN_IP FILL_TURN_IP_IN
+ENV TURN_PORT FILL_TURN_PORT_IN
+
 CMD dev_appserver.py ./out/app_engine --skip_sdk_update_check --host=0.0.0.0
