@@ -56,5 +56,5 @@ RUN grunt build
 COPY run.sh /
 
 WORKDIR /
-
+RUN chmod +x /run.sh
 CMD /run.sh
