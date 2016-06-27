@@ -45,6 +45,6 @@ RUN git clone https://github.com/BenjaminFaal/apprtc
 
 EXPOSE 8080
 
-COPY entrypoint.sh /
-RUN chmod +x /entrypoint.sh
-ENTRYPOINT ["/entrypoint.sh"]
+COPY run.sh /
+RUN chmod +x /run.sh
+CMD /run.sh
