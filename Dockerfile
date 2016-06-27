@@ -1,6 +1,10 @@
 FROM ubuntu
 MAINTAINER Benjamin Faal
 
+ENV SHARED_KEY FILL_KEY_IN
+ENV TURN_IP FILL_TURN_IP_IN
+ENV TURN_PORT FILL_TURN_PORT_IN
+
 RUN apt-get update -y
 
 RUN apt-get install -y wget
@@ -40,10 +44,6 @@ RUN apt-get install -y git
 RUN git clone https://github.com/BenjaminFaal/apprtc
 
 WORKDIR apprtc
-
-ENV SHARED_KEY FILL_KEY_IN
-ENV TURN_IP FILL_TURN_IP_IN
-ENV TURN_PORT FILL_TURN_PORT_IN
 
 RUN sed -i 's/SHARED_KEY_REPLACE/'"$SHARED_KEY"'/g' src/app_engine/apprtc.py
 RUN sed -i 's/TURN_IP_REPLACE/'"$TURN_IP"'/g' src/app_engine/apprtc.py
