@@ -53,4 +53,8 @@ RUN npm install -g grunt-cli
 RUN npm install
 RUN grunt build
 
+COPY run.sh /
+
+WORKDIR /
+
 CMD run.sh
