@@ -57,4 +57,4 @@ COPY run.sh /
 
 WORKDIR /
 
-CMD run.sh
+CMD /run.sh
