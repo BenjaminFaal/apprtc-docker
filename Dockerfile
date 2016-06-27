@@ -43,18 +43,10 @@ RUN apt-get install -y git
 
 RUN git clone https://github.com/BenjaminFaal/apprtc
 
-WORKDIR apprtc
-
-RUN sed -i 's/SHARED_KEY_REPLACE/'"$SHARED_KEY"'/g' src/app_engine/apprtc.py
-RUN sed -i 's/TURN_IP_REPLACE/'"$TURN_IP"'/g' src/app_engine/apprtc.py
-RUN sed -i 's/TURN_PORT_REPLACE/'"$TURN_PORT"'/g' src/app_engine/apprtc.py
-
-RUN npm install -g npm
-RUN npm install -g grunt-cli
-
-RUN npm install
-RUN grunt build
-
 EXPOSE 8080
 
 CMD dev_appserver.py ./out/app_engine --skip_sdk_update_check --host=0.0.0.0
+
+COPY entrypoint.sh /
+RUN chmod +x /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
