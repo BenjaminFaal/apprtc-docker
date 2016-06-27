@@ -45,6 +45,12 @@ RUN git clone https://github.com/BenjaminFaal/apprtc
 
 EXPOSE 8080
 
-COPY run.sh /
-RUN chmod +x /run.sh
-CMD /run.sh
+WORKDIR apprtc
+
+RUN npm install -g npm
+RUN npm install -g grunt-cli
+
+RUN npm install
+RUN grunt build
+
+CMD run.sh
